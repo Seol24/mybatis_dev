@@ -3,15 +3,19 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	
 	<properties resource="application.properties"/>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/> 
+	</settings>
 	<typeAliases>
 		<!-- <typeAlias type="kr.or.dgit.mybatis_study.dto.Student" alias="Student"/>
 		<typeAlias type="kr.or.dgit.mybatis_study.dto.Department" alias="Department"/> -->
-		<package name="kr.or.dgit.mybatis_study.dto"/>
+		<package name="kr.or.dgit.mybatis_dev.dto"/>
 	</typeAliases>
 	
 	<typeHandlers>
-		<package name="kr.or.dgit.mybatis_study.typehandlers"/>
+		<package name="kr.or.dgit.mybatis_dev.typehandlers"/>
 	</typeHandlers>
 	
 	<environments default="development">
@@ -26,7 +30,5 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-		<!-- <mapper resource="kr/or/dgit/mybatis_study/mappers/StudentMapper.xml" /> -->
-		<package name="kr.or.dgit.mybatis_study.dao"/>
 	</mappers>
 </configuration>
