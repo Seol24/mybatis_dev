@@ -30,5 +30,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
+		<package name="kr.or.dgit.mybatis_dev.dao"/>
 	</mappers>
 </configuration>

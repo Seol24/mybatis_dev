@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dgit.mybatis_dev.dao.StudentMapper">
+	
+	
+	<sql id="selectSql">
+		select stud_id, name, email, phone, dob from students
+	</sql>
+	
+	<sql id="insertSql">
+		insert into students(stud_id, name, email, phone, dob)
+	</sql>
+	
+	<sql id="valueSql">
+		values(#{studId},#{name},#{email},#{phone},#{dob})
+	</sql>
+	
+	<sql id="updateSql">
+		update students set name = #{name}, email=#{email}, dob=#{dob}, phone=#{phone}
+	</sql>
+	
+	<sql id="deleteSql">
+		delete from students
+	</sql>
+	
+	<sql id="whereSql">
+		<where>
+			<if test="studId != null">
+				stud_id = #{studId}
+			</if>
+		</where>
+	</sql>
+	
+	<select id="selectStudentByNo" parameterType="Student" resultType="Student"> 
+		<include refid="selectSql"/>
+		<include refid="whereSql"/>
+	</select>
+	
+	<select id="selectOne" parameterType="Student" resultType="Student">
+		<include refid="selectSql"/>
+		<include refid="whereSql"/>
+	</select>
+	
+	<select id="selectStudentByAll" resultType="Student">
+		select stud_id, name, email, phone, dob from students
+	</select>
+	
+	<select id="selectList" resultType="Student">
+		<include refid="selectSql"/>
+	</select>
+	
+	<insert id="insertStudent" parameterType="Student">
+		<include refid="insertSql" />
+		<include refid="valueSql" />
+	</insert>
+	
+	<insert id ="insert" parameterType="Student">
+		<include refid="insertSql" />
+		<include refid="valueSql" />
+	</insert>
+	
+	<update id="updateStudent" parameterType="Student">
+		<include refid="updateSql"></include>
+		<include refid="whereSql"></include>
+	</update>
+	
+	<update id="update" parameterType="Student">
+		<include refid="updateSql"></include>
+		<include refid="whereSql"></include>
+	</update>
+	
+	<delete id="deleteStudent" parameterType="Student">
+		<include refid="deleteSql"/>
+		<include refid="whereSql"/>
+	</delete>
+	<delete id="delete" parameterType="Student">
+		<include refid="deleteSql"/>
+		<include refid="whereSql"/>
+	</delete>
+	
+</mapper>

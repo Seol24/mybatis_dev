@@ -5,6 +5,10 @@ repositories {
     jcenter()
 }
 
+tasks.withType(JavaCompile){
+   options.encoding = 'UTF-8'
+   }
+   
 dependencies {
     // https://mvnrepository.com/artifact/org.mybatis/mybatis
    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.2'
