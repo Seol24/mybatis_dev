@@ -78,5 +78,20 @@ public class StudentServiceTest {
 		}
 		Assert.assertNotEquals(emptyLists, lists);
 	}
-	
+	@Test 
+	public void eTestselectStudentByNoWithAddress(){
+		Student student = new Student();
+		student.setStudId(1);
+		
+		Student selectStudent = studentService.selectStudentByNoWithAddress(student);
+		Assert.assertNotNull(selectStudent);
+	}
+	@Test
+	public void fTestselectStudentByNoAssociationAddress(){
+		Student student = new Student();
+		student.setStudId(1);
+		
+		Student selectStudent = studentService.selectStudentByNoWithAddress(student);
+		Assert.assertNotNull(selectStudent);
+	}
 }

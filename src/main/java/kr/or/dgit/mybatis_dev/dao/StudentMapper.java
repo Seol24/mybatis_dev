@@ -11,4 +11,7 @@ public interface StudentMapper {
 	
 	Map<String, Object> selectStudentByNoForHashMap(Student student);
 	List<Map<String, Object>> selectStudentByAllForHashMap();
+	
+	Student selectStudentByNoWithAddress(Student student);
+	Student selectStudentByNoAssociationAddress(Student student);
 }
