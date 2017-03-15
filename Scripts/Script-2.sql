@@ -90,3 +90,13 @@ select stud_id, name, email, phone, dob, a.ADDR_ID, street, city, state, zip, co
 from students s left join addresses a on s.ADDR_ID=a.ADDR_ID 
 where STUD_ID=1;
  
+
+select t.tutor_id, t.name as tutor_name, email, c.course_id, c.name, description, start_date, end_date
+from tutors T left outer join addresses a on t.addr_id = a.addr_id
+left outer join courses c on t.tutor_id = c.tutor_id
+where t.tutor_id=1;
+
+
+
+
+
