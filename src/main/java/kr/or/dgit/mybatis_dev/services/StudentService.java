@@ -76,5 +76,13 @@ public class StudentService {
 		}
 
 	}
+	public int deleteStudent(int studId){
+		log.debug("deleteStudent()");
+		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
+			int res = sqlSession.getMapper(StudentMapper.class).deleteStudent(studId);
+			sqlSession.commit();
+			return res;
+		}
+	}
 
 }

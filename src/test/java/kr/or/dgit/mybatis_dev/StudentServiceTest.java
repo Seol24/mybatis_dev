@@ -16,6 +16,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import kr.or.dgit.mybatis_dev.dto.Gender;
 import kr.or.dgit.mybatis_dev.dto.PhoneNumber;
 import kr.or.dgit.mybatis_dev.dto.Student;
 import kr.or.dgit.mybatis_dev.services.StudentService;
@@ -97,15 +98,21 @@ public class StudentServiceTest {
 	}*/
 	/*@Test
 	public void testinsertStudent(){
-		Student std = new Student(7, "설동훈", "sdh@test.co.kr",new Date());
+		Student std = new Student(8, "홍길동", "hgd@test.co.kr",new Date(),new PhoneNumber("010-5555-5555"));
+		std.setGender(Gender.FEMALE);
 		int res  = studentService.insertStudent(std);
 		Assert.assertEquals(1, res);
 	}*/
-	@Test
+	/*@Test
 	public void TestupdateSetStudent(){
 		Student std = new Student(5, "설동현", "sdh@test.co.kr", new Date(), new PhoneNumber("010-2618-4317"));
 		int res = studentService.updateSetStudent(std);
 		Assert.assertEquals(1, res);
+		
+	}*/
+	@Test
+	public void TestdeletStudent(){
+		int res = studentService.deleteStudent(3);
 		
 	}
 }

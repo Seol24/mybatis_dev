@@ -16,4 +16,5 @@ public interface StudentMapper {
 	Student selectStudentByNoAssociationAddress(Student student);
 	int updateSetStudent(Student student);
 	int insertStudent(Student student);
+	int deleteStudent(int studId);
 }

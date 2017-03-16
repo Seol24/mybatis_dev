@@ -7,7 +7,10 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import kr.or.dgit.mybatis_dev.dto.Address;
 import kr.or.dgit.mybatis_dev.dto.Course;
+import kr.or.dgit.mybatis_dev.dto.Gender;
+import kr.or.dgit.mybatis_dev.dto.PhoneNumber;
 import kr.or.dgit.mybatis_dev.dto.Tutor;
 import kr.or.dgit.mybatis_dev.services.TutorService;
 
@@ -34,6 +37,12 @@ public class TutorServiceTest {
 			Assert.assertNotNull(course);
 			System.out.println(course);
 		}
+	}*/
+	/*@Test
+	public void testinsertTutor(){
+		Tutor tutor = new Tutor(5, "설동훈", "sdh@test.co.kr", new PhoneNumber("010-0000-0000"), Gender.MALE);
+		int res =tutorService.insertTutor(tutor);
+		
 	}*/
 
 }
