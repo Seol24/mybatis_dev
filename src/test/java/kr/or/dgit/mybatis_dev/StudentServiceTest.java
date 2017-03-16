@@ -110,9 +110,9 @@ public class StudentServiceTest {
 		Assert.assertEquals(1, res);
 		
 	}*/
-	@Test
+	/*@Test
 	public void TestdeletStudent(){
 		int res = studentService.deleteStudent(3);
 		
-	}
+	}*/
 }

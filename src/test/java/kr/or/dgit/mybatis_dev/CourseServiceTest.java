@@ -91,7 +91,7 @@ public class CourseServiceTest {
 		
 		
 	}*/
-	@Test
+/*	@Test
 	public void searchForeachCoursesByTutors(){
 		Map<String, Object> param =null;
 		List<Course> searchForeachCoursesByTutors = courseService.searchForeachCoursesByTutors(param);
@@ -108,5 +108,5 @@ public class CourseServiceTest {
 		tutorIds.add(1);
 		searchForeachCoursesByTutors = courseService.searchForeachCoursesByTutors(param);
 		Assert.assertNotNull(searchForeachCoursesByTutors);
-	}
+	}*/
 }

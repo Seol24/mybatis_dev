@@ -116,5 +116,6 @@ create table user_pics(
 	primary key(id)
 );
 
+delete from user_pics where id =1;
 
 
