@@ -20,7 +20,7 @@ public class UserPicServiceTest {
 	private static UserPicService userpicService;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		userpicService = UserPicService.getInstance();
+		userpicService = new UserPicService();
 	}
 
 	@AfterClass
@@ -28,10 +28,10 @@ public class UserPicServiceTest {
 		userpicService = null;
 	}
 
-	@Test
+/*	@Test
 	public void testinsertUserPic() {
 		byte[] pic = null;
-		File file = new File(System.getProperty("user.dir")+"\\DateFiles\\jjh.jpg");
+		File file = new File(System.getProperty("user.dir")+"\\DateFiles\\jjh.gif");
 		try (InputStream is = new FileInputStream(file);){
 			pic = new byte[is.available()];
 			is.read(pic);
@@ -43,12 +43,13 @@ public class UserPicServiceTest {
 		UserPic userpic = new UserPic(1, "전지현", pic, "인어공주 전지현");
 		int res = userpicService.insertUserPic(userpic);
 		Assert.assertEquals(1, res);
-	}
+	}*/
 	
 	@Test
 	public void testselectUserPicById() throws IOException{
 		UserPic userpic = userpicService.findUserPicById(1);
 		byte[] pic = userpic.getPic();
+		
 		File file = new File(System.getProperty("user.dir")+"\\Download\\jjh.jpg");
 		try(OutputStream os = new FileOutputStream(file)){
 			os.write(pic);
