@@ -2,6 +2,7 @@ package kr.or.dgit.mybatis_dev;
 
 import java.util.Collections;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -43,7 +44,7 @@ public class StudentServiceTest {
 	}
 	
 
-	@Test 
+/*	@Test 
 	public void aTestselectStudentByNoForResultMap(){
 		Student student = new Student();
 		student.setStudId(1);
@@ -93,5 +94,18 @@ public class StudentServiceTest {
 		
 		Student selectStudent = studentService.selectStudentByNoWithAddress(student);
 		Assert.assertNotNull(selectStudent);
+	}*/
+	/*@Test
+	public void testinsertStudent(){
+		Student std = new Student(7, "설동훈", "sdh@test.co.kr",new Date());
+		int res  = studentService.insertStudent(std);
+		Assert.assertEquals(1, res);
+	}*/
+	@Test
+	public void TestupdateSetStudent(){
+		Student std = new Student(5, "설동현", "sdh@test.co.kr", new Date(), new PhoneNumber("010-2618-4317"));
+		int res = studentService.updateSetStudent(std);
+		Assert.assertEquals(1, res);
+		
 	}
 }

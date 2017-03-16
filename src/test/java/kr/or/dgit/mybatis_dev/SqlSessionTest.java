@@ -21,9 +21,9 @@ public class SqlSessionTest {
 		sqlSessionFactory = null;
 	}
 
-	@Test
+	/*@Test
 	public void testSqlSession() {
 		Assert.assertNotNull(sqlSessionFactory.openSession());
-	}
+	}*/
 
 }

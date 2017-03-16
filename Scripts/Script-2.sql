@@ -97,6 +97,20 @@ left outer join courses c on t.tutor_id = c.tutor_id
 where t.tutor_id=1;
 
 
+select *
+from courses
+where TUTOR_ID =1
+and name like '%java%' 
+and START_DATE >= '2013-03-01' 
+and END_DATE <= '2013-09-01';
+
+select * from courses
+where TUTOR_ID in (1,2);
+
+
+
+
+
 
 
 

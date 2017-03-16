@@ -13,43 +13,68 @@ import kr.or.dgit.mybatis_dev.util.MybatisSqlSessionFactory;
 
 public class StudentService {
 	private static Log log = LogFactory.getLog(StudentService.class);
-	private String nameSpace ="kr.or.dgit.mybatis_dev.dao.StudentMapper";
-	
-	public Student selectStudentByNoForResultMap(Student student){
+	private String nameSpace = "kr.or.dgit.mybatis_dev.dao.StudentMapper";
+
+	public Student selectStudentByNoForResultMap(Student student) {
 		log.debug("selectStudentByNoForResultMap()");
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
-			return sqlSession.selectOne(nameSpace+".selectStudentByNoForResultMap", student);
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(nameSpace + ".selectStudentByNoForResultMap", student);
 		}
 	}
-	public List<Student> selectStudentByAllForResultMap(){
+
+	public List<Student> selectStudentByAllForResultMap() {
 		log.debug("selectStudentByAllForResultMap()");
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
 			return sqlSession.getMapper(StudentMapper.class).selectStudentByAllForResultMap();
 		}
 	}
-	
-	public Map<String, Object> selectStudentByNoForHashMap(Student student){
+
+	public Map<String, Object> selectStudentByNoForHashMap(Student student) {
 		log.debug("selectStudentByNoForHashMap()");
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
-			return sqlSession.selectOne(nameSpace+".selectStudentByNoForHashMap", student);
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(nameSpace + ".selectStudentByNoForHashMap", student);
 		}
 	}
-	public List<Map<String, Object>> selectStudentByAllForHashMap(){
+
+	public List<Map<String, Object>> selectStudentByAllForHashMap() {
 		log.debug("selectStudentByAllForHashMap()");
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
-			return sqlSession.selectList(nameSpace+".selectStudentByAllForHashMap");
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectList(nameSpace + ".selectStudentByAllForHashMap");
 		}
 	}
-	public Student selectStudentByNoWithAddress(Student student){
+
+	public Student selectStudentByNoWithAddress(Student student) {
 		log.debug("selectStudentByNoWithAddress()");
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
-			return sqlSession.selectOne(nameSpace+".selectStudentByNoWithAddress", student);
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(nameSpace + ".selectStudentByNoWithAddress", student);
 		}
 	}
-	public Student selectStudentByNoAssociationAddress(Student student){
+
+	public Student selectStudentByNoAssociationAddress(Student student) {
 		log.debug("selectStudentByNoAssociationAddress()");
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
-			return sqlSession.selectOne(nameSpace+".selectStudentByNoAssociationAddress", student);
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(nameSpace + ".selectStudentByNoAssociationAddress", student);
 		}
 	}
+
+	public int updateSetStudent(Student student) {
+		int res = -1;
+		log.debug("updateSetStudent()");
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			res = sqlSession.getMapper(StudentMapper.class).updateSetStudent(student);
+			sqlSession.commit();
+			return res;
+		}
+	}
+
+	public int insertStudent(Student student) {
+		log.debug("insertStudent()");
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			int res = sqlSession.getMapper(StudentMapper.class).insertStudent(student);
+			sqlSession.commit();
+			return res;
+		}
+
+	}
+
 }
