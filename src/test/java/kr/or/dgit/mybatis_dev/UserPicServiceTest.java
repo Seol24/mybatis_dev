@@ -45,10 +45,11 @@ public class UserPicServiceTest {
 		Assert.assertEquals(1, res);
 	}*/
 	
-	@Test
+	/*@Test
 	public void testselectUserPicById() throws IOException{
 		UserPic userpic = userpicService.findUserPicById(1);
 		byte[] pic = userpic.getPic();
+		
 		
 		File file = new File(System.getProperty("user.dir")+"\\Download\\jjh.jpg");
 		try(OutputStream os = new FileOutputStream(file)){
@@ -59,6 +60,6 @@ public class UserPicServiceTest {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

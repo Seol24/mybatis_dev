@@ -1,4 +1,6 @@
-
+select addr_id, street, city, state, zip, country 
+from addresses 
+where state = 'CA' and zip = '92110'; 
 
 CREATE TABLE ADDRESSES (
   ADDR_ID INT(11) NOT NULL AUTO_INCREMENT,
@@ -117,5 +119,7 @@ create table user_pics(
 );
 
 delete from user_pics where ids =1;
+
+select * from students; 
 
 
